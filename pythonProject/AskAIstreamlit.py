@@ -4,16 +4,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# client IA initialisation
-clientIA = OpenAI()
-
 # Initialize the Streamlit app
-st.title("Chat with : " + collection.name)
-
-# Function to query ChromaDB and get relevant document context
-def get_relevant_documents(user_input):
-    results = collection.query(query_texts=[user_input], n_results=10)  # Get relevant documents
-    return results
+st.title("Chat with : ")
 
 # Initialize chat history (this is local in the session, not globally)
 if 'chat' not in st.session_state:
@@ -29,8 +21,7 @@ for user_message, assistant_response in st.session_state.chat:
 # User input for new messages
 if prompt := st.chat_input("What is your question?"):
 
-    # Get context from ChromaDB based on user input
-    context = get_relevant_documents(prompt)
+
 
     chat_messages = [
                         {"role": "user", "content": user_message} for user_message, _ in st.session_state.chat
