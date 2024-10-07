@@ -1,4 +1,4 @@
-import chromadb
+#import chromadb
 import streamlit as st
 from openai import OpenAI
 from dotenv import load_dotenv
@@ -7,11 +7,11 @@ from chromadb.utils import embedding_functions
 load_dotenv()
 
 # Client creation
-chroma_client = chromadb.PersistentClient("C:/Users/richo")
+#chroma_client = chromadb.PersistentClient("C:/Users/richo")
 
 # Create or get database
 #collection = chroma_client.get_or_create_collection(name="Nico_Outlook_email")
-collection = chroma_client.get_or_create_collection(name="Texte")
+#collection = chroma_client.get_or_create_collection(name="Texte")
 #collection = chroma_client.get_or_create_collection(name="shopping_trends")
 
 # client IA initialisation
