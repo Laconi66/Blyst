@@ -1,7 +1,6 @@
 import streamlit as st
 from openai import OpenAI
 from dotenv import load_dotenv
-from chromadb.utils import embedding_functions
 
 load_dotenv()
 
